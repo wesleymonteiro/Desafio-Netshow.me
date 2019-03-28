@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h1>Video's Info</h1>
+</div>
+
+<%= simple_form_for video do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.hidden_field :user_id, value: video.user_id || current_user.id %>
+      <%= f.input :title, input_html: { autofocus: true } %>
+      <%= f.input :video_url %>
+
+    </div>
+  </div>
+  <hr>
+  <%= submit_tag "Submit", class: "button btn btn-primary", data: { disable_with: "Submiting" } %>
+  <%= link_to "Cancel", :back, class: "btn btn-default" %>
+<% end %>

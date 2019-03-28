@@ -1,18 +1,18 @@
 <tr>
-  <td>
+  <td class="col-md-3">
     <%= video.title %>
   </td>
-  <td>
+  <td class="col-md-3">
     <%= video.views %>
   </td>
-  <td>
-    <%= video.user.name %>
+  <td class="col-md-3">
+    <%= video.user.email %>
   </td>
-  <td>
-    <div class="btn-toolbar">
-      <%= link_to "Watch", video_path, class: "btn btn-sm btn-primary" %>
-      <%= link_to "Edit", edit_video_path, class: "btn btn-sm btn-primary" %>
-      <%= link_to "Delete", edit_video_path, class: "btn btn-sm btn-danger", method: :delete, data: { disable_with: "That will be permanent, are you sure?" } %>
+  <td class="col-md-3">
+    <div class="btn-toolbar pull-right">
+      <%= link_to "Watch", video_path(video.id), class: "btn btn-sm btn-primary" %>
+      <%= link_to "Edit", edit_video_path(video.id), class: "btn btn-sm btn-primary" %>
+      <%= link_to "Delete", edit_video_path(video.id), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "This will be permanent, are you sure?" } %>
     </div>
   </td>
 </tr>

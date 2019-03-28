@@ -5,8 +5,9 @@
 <div class="col-md-4">
   <%= link_to "Add new", new_video_path, class: "btn btn-success" %>
 </div>
+<br>
 
-<% unless @videos.blank? %>
+<% unless videos.blank? %>
   <br>
   <div class="table-responsive">
     <table class="table table-striped table-hover">
@@ -18,7 +19,9 @@
           <th></th>
           
       <tbody>
-        <%= @videos.each { |video| render "video", video: video } %>
+        <% videos.each do |video|  %>
+          <%= render "video", video: video %>
+        <% end %>
       </tbody>
     </table>
   </div>
