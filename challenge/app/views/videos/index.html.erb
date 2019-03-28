@@ -15,7 +15,9 @@
         <tr>
           <th>Title</th>
           <th>Views</th>
-          <th>Creator</th>
+          <% if current_user.admin? %>
+            <th>Creator</th>
+          <% end %>
           <th></th>
           
       <tbody>

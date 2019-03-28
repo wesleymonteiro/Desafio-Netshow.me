@@ -5,9 +5,11 @@
   <td class="col-md-3">
     <%= video.views %>
   </td>
-  <td class="col-md-3">
-    <%= video.user.email %>
-  </td>
+  <% if current_user.admin? %>
+    <td class="col-md-3">
+      <%= video.user.email %>
+    </td>
+  <% end %>
   <td class="col-md-3">
     <div class="btn-toolbar pull-right">
       <%= link_to "Watch", video_path(video.id), class: "btn btn-sm btn-primary" %>

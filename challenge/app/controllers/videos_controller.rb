@@ -15,7 +15,7 @@ class VideosController < ApplicationController
     if video.save
       respond_with video, location: videos_path
     else
-      flash[:danger] = "Errrow"
+      flash[:alert] = "There's something wrong. Please, try again."
       render :new
     end
   end
