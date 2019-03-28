@@ -11,6 +11,9 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="text-center">
+      <%= render "layouts/menu" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
