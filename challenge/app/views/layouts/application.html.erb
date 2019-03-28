@@ -9,11 +9,12 @@
   </head>
 
   <body>
+    <%= render "layouts/menu" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="text-center">
-      <%= render "layouts/menu" %>
+    <div class="container">
       <%= yield %>
+    </div>
     </div>
   </body>
 </html>
