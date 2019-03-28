@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>Users</h1>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Videos Quantity</th>
+        <th>Role</th>
+        <th></th>
+        
+    <tbody>
+      <% users.each do |user|  %>
+        <%= render "user", user: user %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

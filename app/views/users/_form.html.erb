@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>Users's Info</h1>
+</div>
+
+<%= simple_form_for user do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :email, input_html: { autofocus: true } %>
+      <%= f.input :role, as: :radio_buttons, collection: User.roles.map { |role| [role.first.capitalize, role.first] }, checked: user.new_record? ? "common" : user.role, item_wrapper_class: "radio-inline" %>
+      <% if user == current_user %>
+        <%= f.input :password %>
+        <%= f.input :password_confirmation %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+  <%= submit_tag "Submit", class: "button btn btn-primary", data: { disable_with: "Submiting" } %>
+  <%= link_to "Cancel", :back, class: "btn btn-default" %>
+<% end %>

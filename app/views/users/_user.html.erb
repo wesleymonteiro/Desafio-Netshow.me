@@ -1,0 +1,17 @@
+<tr>
+  <td class="col-md-3">
+    <%= user.email %>
+  </td>
+  <td class="col-md-3">
+    <%= user.videos.size %>
+  </td>
+  <td class="col-md-3">
+    <%= user.role %>
+  </td>
+  <td class="col-md-3">
+    <div class="btn-toolbar pull-right">
+      <%= link_to "Edit", edit_user_path(user.id), class: "btn btn-sm btn-primary" %>
+      <%= link_to "Delete", user_path(user.id), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "This will be permanent, are you sure?" } %>
+    </div>
+  </td>
+</tr>
