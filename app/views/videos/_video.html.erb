@@ -14,7 +14,7 @@
     <div class="btn-toolbar pull-right">
       <%= link_to "Watch", video_path(video.id), class: "btn btn-sm btn-primary" %>
       <%= link_to "Edit", edit_video_path(video.id), class: "btn btn-sm btn-primary" %>
-      <%= link_to "Delete", edit_video_path(video.id), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "This will be permanent, are you sure?" } %>
+      <%= link_to "Delete", video_path(video.id), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "This will be permanent, are you sure?" } %>
     </div>
   </td>
 </tr>

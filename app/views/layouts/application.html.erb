@@ -10,9 +10,18 @@
 
   <body>
     <%= render "layouts/menu" if current_user.present? %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="container">
+      <div class="col-md-12 text-center">
+        <% if notice.present? %>
+          <br>
+          <p class="alert alert-success"><%= notice %></p>
+          <br>
+        <% elsif alert.present? %>
+          <br>
+          <p class="alert alert-danger"><%= alert %></p>
+          <br>
+        <% end %>
+      </div>
       <%= yield %>
     </div>
     </div>

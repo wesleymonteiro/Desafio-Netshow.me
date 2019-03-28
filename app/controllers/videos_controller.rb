@@ -1,7 +1,4 @@
 class VideosController < ApplicationController
-
-  before_action :video_attributes, only: %i[create update]
-
   expose(:videos) {  (current_user.admin? ? Video.all : Video.where(user_id: current_user.id)).includes(:user) }
   expose(:video)
 
@@ -12,29 +9,39 @@ class VideosController < ApplicationController
   end
 
   def create
+    video.attributes = video_attributes
     if video.save
+      flash[:notice] = "The video #{video.title} has been created!"
       respond_with video, location: videos_path
     else
-      flash[:alert] = "There's something wrong. Please, try again."
-      render :new
+      show_error
     end
   end
 
   def edit
-    
   end
 
   def update
+    if video.update(video_attributes)
+      flash[:notice] = "The video #{video.title} has been updated!"
+      respond_with video, location: videos_path
+    else
+      show_error
+    end
   end
 
   def show
   end
 
   def destroy
+    flash[:notice] = "The video #{video.title} has been deleted!"
+    video.destroy
+    respond_with video, location: videos_path
   end
 
   private
+
   def video_attributes
-    video.attributes = params.require(:video).permit(%i[id user_id title video_url])
+    params.require(:video).permit(%i[id user_id title video_url])
   end
 end
