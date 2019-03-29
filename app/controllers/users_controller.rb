@@ -28,6 +28,6 @@ class UsersController < ApplicationController
 
   private
   def user_attributes
-    user.attributes = params.require(:user).permit(%i[id email])
+    user.attributes = params.require(:user).permit(%i[id email role])
   end
 end

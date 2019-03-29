@@ -14,4 +14,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap
+//= require video.min
+//= require videojs-contrib-hls.min
 //= require_tree .
