@@ -2,10 +2,12 @@
   <h1><%= video.title %></h1>
 </div>
 
-<div class="cd-md-12 text-center">
-  <video id="video-tag" class="video-js vjs-default-skin" controls autoplay height="100%" width="100%">
+<div class="cd-md-12">
+  <video id="video-tag" class="video-js vjs-default-skin" controls autoplay
+   width="640" height="360" data-url="<%= increment_view_video_path(video.id) %>">
     <source
      src="<%= video.url %>"
      type="application/x-mpegURL">
   </video>
+  <p>Viewed <%= video.views %> times</p>
 </div>

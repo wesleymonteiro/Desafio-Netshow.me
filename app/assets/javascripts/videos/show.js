@@ -1,13 +1,16 @@
 $(document).ready(()=>{
-  var options = {hls: {
-    withCredentials: true,
-    overrideNative: true
-  }};
+  let $videoTag = $("#video-tag")
+  let options = {hls: {
+    overrideNative: true,
+    nativeAudioTracks: false,
+    nativeVideoTracks: false
+  }}
   
   let video = videojs("video-tag", {flash: options, html5: options})
-  videojs.options.html5.nativeAudioTracks = false
-  videojs.options.html5.nativeVideoTracks = false
   video.ready(()=>{
-    video.play()
+    $.ajax({
+      url: $videoTag.data("url"),
+      type: "POST"
+    })
   })
 })

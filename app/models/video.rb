@@ -4,6 +4,8 @@ class Video < ApplicationRecord
   validates :title, :views, :url, presence: true
   validate :valid_url?
 
+  default_scope { order("views DESC") }
+
   private
   def valid_url?
     uri = URI.parse(url)

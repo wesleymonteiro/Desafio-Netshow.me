@@ -39,6 +39,10 @@ class VideosController < ApplicationController
     respond_with video, location: videos_path
   end
 
+  def increment_view
+    video.increment!(:views)
+  end
+
   private
 
   def video_attributes
