@@ -1,5 +1,8 @@
 {
   "name": "challenge",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "yarm": "^0.4.0",
+    "yarn": "^1.15.2"
+  }
 }
