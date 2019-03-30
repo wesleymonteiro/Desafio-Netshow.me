@@ -42,6 +42,6 @@ class VideosController < ApplicationController
   private
 
   def video_attributes
-    params.require(:video).permit(%i[id user_id title video_url])
+    params.require(:video).permit(%i[id user_id title url])
   end
 end

@@ -7,9 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.where(email: "admin@admin.com").first_or_create! do |user|
-  user.name                    = "Admin"
   user.role                    = "admin"
   user.password                = "admin123"
   user.password_confirmation   = "admin123"
-  user.skip_confirmation!
 end

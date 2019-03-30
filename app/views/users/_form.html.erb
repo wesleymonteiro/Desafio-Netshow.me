@@ -6,7 +6,9 @@
   <div class="row">
     <div class="col-md-6">
       <%= f.input :email, input_html: { autofocus: true }, disabled: user != current_user %>
-      <%= f.input :role, as: :radio_buttons, collection: User.roles.map { |role| [role.first.capitalize, role.first] }, checked: user.new_record? ? "common" : user.role, item_wrapper_class: "radio-inline" %>
+      <% if current_user.admin? %>
+        <%= f.input :role, as: :radio_buttons, collection: User.roles.map { |role| [role.first.capitalize, role.first] }, checked: user.new_record? ? "common" : user.role, item_wrapper_class: "radio-inline" %>
+      <% end %>
       <% if user == current_user %>
         <%= f.input :password %>
         <%= f.input :password_confirmation %>

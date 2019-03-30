@@ -11,6 +11,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem "simple_form"
 gem 'decent_exposure'
+gem 'mini_racer'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 gem "pg"
@@ -55,5 +56,3 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

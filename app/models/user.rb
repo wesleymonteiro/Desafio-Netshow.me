@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum role: %i[common admin]
+  validates_presence_of :email, uniqueness: true
   has_many :videos
 end
