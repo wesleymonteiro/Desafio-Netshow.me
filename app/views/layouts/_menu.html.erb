@@ -1,11 +1,16 @@
-<div class="col-md-12 text-center">
-  <h1> Welcome to Video Uploader Challenge! </h1>
+<div class="collapse navbar-collapse">
   <% if current_user.admin? %>
-    <%= link_to "Users", users_path, class: "btn btn-default" %>
-    <%= link_to "Videos", videos_path, class: "btn btn-default" %>
-  <% else %>
-    <%= link_to "Home", videos_path, class: "btn btn-default" %>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Users", users_path %></li>
+    </ul>
   <% end %>
-  <%= link_to "Config", edit_user_path(current_user.id), class: "btn btn-default" %>
-  <%= link_to "Logout", [:destroy, :user, :session], method: :delete, class: "btn btn-default" %>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <%= link_to "Account Config", edit_user_path(current_user.id) %>
+    </li>
+    <li>
+      <%= link_to "Logout", [:destroy, :user, :session], method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
+  </ul>
 </div>
