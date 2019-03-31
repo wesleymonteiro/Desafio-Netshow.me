@@ -6,12 +6,12 @@ class Video < ApplicationRecord
 
   default_scope { order("views DESC") }
 
-  private
   def valid_url?
+    raise_url_error unless url.present? && url.end_with?(".m3u8")
     uri = URI.parse(url)
-    raise_url_error() unless uri.is_a?(URI::HTTP) && !uri.host.nil?
+    raise_url_error unless uri.is_a?(URI::HTTP) && !uri.host.nil?
   rescue URI::InvalidURIError
-    raise_url_error()
+    raise_url_error
   end
 
   def raise_url_error()

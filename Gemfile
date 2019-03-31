@@ -44,11 +44,14 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem "rspec-rails"
+  gem "shoulda-matchers"
+  gem "ffaker"
   gem 'selenium-webdriver'
+  gem "pry-byebug"
 end
 
 group :development do
-  gem "pry-byebug"
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
